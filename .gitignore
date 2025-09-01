@@ -1,0 +1,12 @@
+# local logs and outputs
+runs/
+out/
+*.log
+
+# py cache
+__pycache__/
+*.pyc
+
+# OS junk
+.DS_Store
+Thumbs.db
