@@ -1,0 +1,4 @@
+metric_id,headline
+aggregate_median_GPUTime,GPU bound – GPU time dominates render thread
+loading_time_Session_ms,Session loading takes ~32s on this machine
+loading_time_ReturnToMenu_ms,Returning to menu takes ~4s

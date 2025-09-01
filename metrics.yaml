@@ -1,0 +1,35 @@
+###############################################
+# metrics.yaml
+#
+# This file defines derived metrics emitted by the
+# ingestors.  Each entry describes how to compute
+# a metric from the underlying data collected during
+# parsing.  The v2 ingestor currently uses built‑in
+# extractors for its core metrics, but this file
+# documents the initial MVP metric definitions and
+# serves as a template for future extensions.
+
+# Frame time quantiles.  When FPS samples are
+# collected, the ingestor converts them into
+# frame durations (in milliseconds) and computes
+# the 50th and 95th percentiles.  The resulting
+# metrics use the IDs specified here.
+frametime_p50:
+  source: frametime
+  quantile: 0.50
+frametime_p95:
+  source: frametime
+  quantile: 0.95
+
+# Garbage collection pause time (total).
+gc_total:
+  source: gc_pause
+  aggregation: sum
+
+# Last loading time.  Records the final loading
+# measurement for a given session (e.g. return to
+# menu).  Additional labels (e.g. Session or
+# ReturnToMenu) are captured by the parser.
+last_loading_time:
+  source: loading_time
+  aggregation: last
