@@ -1,0 +1,8 @@
+machine,build,origin,source_role,metric_id,value
+minimal AMD3,2.0.1.2559,manual,client,loading_time_Session_ms,32300.0
+minimal AMD3,2.0.1.2559,manual,client,loading_time_ReturnToMenu_ms,4130.0
+minimal AMD3,2.0.1.2559,manual,client,aggregate_median_GPUTime,33.15
+minimal AMD3,2.0.1.2559,manual,client,aggregate_median_RenderThread,17.09
+minimal AMD3,2.0.1.2559,manual,client,aggregate_median_MainThread,6.41
+minimal AMD3,2.0.1.2559,manual,client,frametime_p50_ms,30.0
+minimal AMD3,2.0.1.2559,manual,client,frametime_p95_ms,45.0
