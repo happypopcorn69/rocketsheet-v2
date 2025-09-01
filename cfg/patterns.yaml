@@ -1,0 +1,29 @@
+###############################################
+# patterns.yaml
+#
+# This file contains a minimal set of regex patterns
+# used by the MVP log ingestor.  The v2 parser has
+# built‑in logic for the core Space Engineers log
+# markers so this configuration is optional.  You can
+# extend these definitions as needed to match
+# additional line formats.
+
+# Example pattern for loading times.  Matches lines
+# like `LOADING_TIME|Session=1234ms` and captures
+# the label (`Session`) and the numeric value in
+# milliseconds.
+LOADING_TIME:
+  regex: "^LOADING_TIME\|(?P<label>[^=]+)=(?P<value>\d+(?:\.\d+)?)ms$"
+  value_group: "value"
+  label_group: "label"
+
+# Example pattern for aggregates.  Matches lines
+# like `AGGREGATE_GPUTime|Legend→Values` where the
+# legend and values are separated by semicolons.  The
+# parser splits the legend and values on `;` and
+# associates each label with its numeric entry.
+AGGREGATE:
+  regex: "^AGGREGATE_(?P<name>[^|]+)\|(?P<legend>[^|]+)\|(?P<values>.+)$"
+  name_group: "name"
+  legend_group: "legend"
+  values_group: "values"
